@@ -795,6 +795,155 @@ class NewsContentAPI(Resource):
 
 api.add_resource(NewsContentAPI, '/api/news/item/<int:id>', endpoint = 'newscontent')
 
+# album list
+albumsInPage1 = [
+    {
+      'id': 38049,
+      'title': '私房钱都藏哪了',
+      'abstract': '',
+      'imgs': ['19537/thumb.jpg', '19538/thumb.jpg', '19539/thumb.jpg'],
+      'imgs_all_count': 8,
+      'page_view': 323,
+      'created_at': '2014-03-25 13:46:51',
+      'ntype': 2
+    },
+    {
+      'id': 38036,
+      'title': '【杭州街拍】美女带猴子上街',
+      'abstract': '',
+      'imgs': ['19527/thumb.jpg', '19528/thumb.jpg', '19529/thumb.jpg'],
+      'imgs_all_count': 9,
+      'page_view': 337,
+      'created_at': '2014-03-25 10:27:21',
+      'ntype': 2
+    },
+    {
+      'id': 37922,
+      'title': '武汉大学樱花怒放',
+      'abstract': '',
+      'imgs': ['19483/thumb.jpg', '19484/thumb.jpg', '19485/thumb.jpg'],
+      'imgs_all_count': 3,
+      'page_view': 329,
+      'created_at': '2014-03-23 08:36:49',
+      'ntype': 2
+    },
+    {
+      'id': 37899,
+      'title': '【原创】翻白眼吧，温蒂妮小姐',
+      'abstract': '',
+      'imgs': ['19465/thumb.jpg', '19466/thumb.jpg', '19467/thumb.jpg'],
+      'imgs_all_count': 9,
+      'page_view': 228,
+      'created_at': '2014-03-22 15:23:26',
+      'ntype': 2
+    },
+    {
+      'id': 37891,
+      'title': '我是一个兵',
+      'abstract': '',
+      'imgs': ['19453/thumb.png', '19454/thumb.png', '19455/thumb.png'],
+      'imgs_all_count': 9,
+      'page_view': 313,
+      'created_at': '2014-03-22 11:21:27',
+      'ntype': 2
+    },
+    {
+      'id': 37842,
+      'title': '限行，只是一块“创可贴”',
+      'abstract': '',
+      'imgs': ['19425/thumb.jpg', '19426/thumb.jpg', '19427/thumb.jpg'],
+      'imgs_all_count': 7,
+      'page_view': 347,
+      'created_at': '2014-03-21 11:07:02',
+      'ntype': 2
+    },
+    {
+      'id': 37797,
+      'title': '拥有幸福的九个标志',
+      'abstract': '',
+      'imgs': ['19389/thumb.jpg', '19390/thumb.jpg', '19391/thumb.jpg'],
+      'imgs_all_count': 9,
+      'page_view': 293,
+      'created_at': '2014-03-20 11:12:30',
+      'ntype': 2
+    },
+    {
+      'id': 37738,
+      'title': '【杭州街拍】清纯、御姐、中性、辣妈',
+      'abstract': '',
+      'imgs': ['19354/thumb.jpg', '19355/thumb.jpg', '19356/thumb.jpg'],
+      'imgs_all_count': 8,
+      'page_view': 588,
+      'created_at': '2014-03-19 13:13:20',
+      'ntype': 2
+    },
+    {
+      'id': 37735,
+      'title': '\"范思哲\"男装现\"开裆裤\"走台',
+      'abstract': '',
+      'imgs': ['19346/thumb.jpg', '19347/thumb.jpg', '19348/thumb.jpg'],
+      'imgs_all_count': 8,
+      'page_view': 380,
+      'created_at': '2014-03-19 11:20:29',
+      'ntype': 2
+    },
+    {
+      'id': 37668,
+      'title': '台美少女大提琴演奏家走红内地',
+      'abstract': '',
+      'imgs': ['19305/thumb.jpg', '19306/thumb.jpg', '19307/thumb.jpg'],
+      'imgs_all_count': 16,
+      'page_view': 350,
+      'created_at': '2014-03-18 14:17:20',
+      'ntype': 2
+    }
+]
+
+albumsInPage2 = [
+    {
+      'id': 37654,
+      'title': '【杭州街拍】潮人们出街了',
+      'abstract': '',
+      'imgs': ['19292/thumb.jpg', '19293/thumb.jpg', '19294/thumb.jpg'],
+      'imgs_all_count': 7,
+      'page_view': 350,
+      'created_at': '2014-03-18 09:54:18',
+      'ntype': 2
+    },
+    {
+      'id': 37599,
+      'title': '牛奶变外衣，够不够激情性感？',
+      'abstract': '',
+      'imgs': ['19261/thumb.jpg', '19262/thumb.jpg', '19263/thumb.jpg'],
+      'imgs_all_count': 11,
+      'page_view': 305,
+      'created_at': '2014-03-17 14:54:39',
+      'ntype': 2
+    },
+    {
+      'id': 37590,
+      'title': '英餐厅推出超辣汉堡致5人住院',
+      'abstract': '',
+      'imgs': ['19249/thumb.jpg', '19250/thumb.jpg', '19251/thumb.jpg'],
+      'imgs_all_count': 7,
+      'page_view': 229,
+      'created_at': '2014-03-17 11:06:11',
+      'ntype': 2
+    }
+]
+
+class AlbumsAPI(Resource):
+  def get(self):
+    p = int(request.args.get('page', 1))
+    if p == 1:
+      return { 'data': map(make_public_url, albumsInPage1 ), 'has_more': True }
+    elif p == 2:
+      return { 'data': map(make_public_url, albumsInPage2 ), 'has_more': False }
+    else:
+      abort(404)
+
+api.add_resource(AlbumsAPI, '/api/news/pic_list', endpoint = 'albums')
+
 # run server
 if __name__ == '__main__':
     #app.run(debug = True)
