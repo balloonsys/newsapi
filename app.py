@@ -19,8 +19,8 @@ def make_public_url(headline):
               new_headline['imgs'].append(url_for('staticimage', localpath = img, _external = True))
         elif field == 'medias':
             new_headline['medias'] = [];
-            new_photo = {};
             for photo in headline[field]:
+              new_photo = {};
               new_photo['media'] = url_for('staticimage', localpath = photo['media'], _external = True)
               new_photo['title'] = photo['title']
               new_headline['medias'].append(new_photo)
@@ -785,7 +785,21 @@ class NewsContentAPI(Resource):
         37511: {'news': make_public_url(newsContent37511), 'code': 'ok'},
         37512: {'news': make_public_url(newsContent37512), 'code': 'ok'},
         37518: {'news': make_public_url(newsContent37518), 'code': 'ok'},
-        37522: {'news': make_public_url(newsContent37522), 'code': 'ok'}
+        37522: {'news': make_public_url(newsContent37522), 'code': 'ok'},
+
+        38049: {'news': make_public_url(photosInAlbum38049), 'code': 'ok'},
+        38036: {'news': make_public_url(photosInAlbum38036), 'code': 'ok'},
+        37922: {'news': make_public_url(photosInAlbum37922), 'code': 'ok'},
+        37899: {'news': make_public_url(photosInAlbum37899), 'code': 'ok'},
+        37891: {'news': make_public_url(photosInAlbum37891), 'code': 'ok'},
+        37842: {'news': make_public_url(photosInAlbum37842), 'code': 'ok'},
+        37797: {'news': make_public_url(photosInAlbum37797), 'code': 'ok'},
+        37738: {'news': make_public_url(photosInAlbum37738), 'code': 'ok'},
+        37735: {'news': make_public_url(photosInAlbum37735), 'code': 'ok'},
+        37668: {'news': make_public_url(photosInAlbum37668), 'code': 'ok'},
+        37654: {'news': make_public_url(photosInAlbum37654), 'code': 'ok'},
+        37599: {'news': make_public_url(photosInAlbum37599), 'code': 'ok'},
+        37590: {'news': make_public_url(photosInAlbum37590), 'code': 'ok'}
       }
 
       if id in newsContents:
@@ -944,11 +958,306 @@ class AlbumsAPI(Resource):
 
 api.add_resource(AlbumsAPI, '/api/news/pic_list', endpoint = 'albums')
 
+# photos in selected album
+photosInAlbum38049 = {
+  'id': 38049,
+  'title': '私房钱都藏哪了',
+  'abstract': '',
+  'content': '',
+  'editor': '金烨',
+  'medias': [
+    {'media': '19537/thumb.jpg', 'title': ''},
+    {'media': '19538/thumb.jpg', 'title': ''},
+    {'media': '19539/thumb.jpg', 'title': ''},
+    {'media': '19540/thumb.jpg', 'title': ''},
+    {'media': '19541/thumb.jpg', 'title': ''},
+    {'media': '19542/thumb.jpg', 'title': ''},
+    {'media': '19543/thumb.jpg', 'title': ''},
+    {'media': '19544/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 356,
+  'pdate': '2014-03-25 13:46:51',
+  'source': '楚天都市报',
+  'ntype': 2
+}
+
+photosInAlbum38036 = {
+  'id': 38036,
+  'title': '【杭州街拍】美女带猴子上街',
+  'abstract': '',
+  'content': '',
+  'editor': '金烨',
+  'medias': [
+    {'media': '19527/thumb.jpg', 'title': ''},
+    {'media': '19528/thumb.jpg', 'title': ''},
+    {'media': '19529/thumb.jpg', 'title': ''},
+    {'media': '19530/thumb.jpg', 'title': ''},
+    {'media': '19531/thumb.jpg', 'title': ''},
+    {'media': '19532/thumb.jpg', 'title': ''},
+    {'media': '19533/thumb.jpg', 'title': ''},
+    {'media': '19534/thumb.jpg', 'title': ''},
+    {'media': '19535/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 337,
+  'pdate': '2014-03-25 10:27:21',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37922 = {
+  'id': 37922,
+  'title': '武汉大学樱花怒放',
+  'abstract': '',
+  'content': '',
+  'editor': '邹倩慧',
+  'medias': [
+    {'media': '19483/thumb.jpg', 'title': '樱花大道上游人如织。'},
+    {'media': '19484/thumb.jpg', 'title': ''},
+    {'media': '19485/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 344,
+  'pdate': '2014-03-23 08:36:49',
+  'source': '腾讯新闻',
+  'ntype': 2
+}
+
+photosInAlbum37899 = {
+  'id': 37899,
+  'title': '【原创】翻白眼吧，温蒂妮小姐',
+  'abstract': '',
+  'content': '',
+  'editor': '陈洁',
+  'medias': [
+    {'media': '19465/thumb.jpg', 'title': ''},
+    {'media': '19466/thumb.jpg', 'title': ''},
+    {'media': '19467/thumb.jpg', 'title': ''},
+    {'media': '19468/thumb.jpg', 'title': ''},
+    {'media': '19469/thumb.jpg', 'title': ''},
+    {'media': '19470/thumb.jpg', 'title': ''},
+    {'media': '19471/thumb.jpg', 'title': ''},
+    {'media': '19472/thumb.jpg', 'title': ''},
+    {'media': '19473/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 344,
+  'pdate': '2014-03-22 15:23:26',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37891 = {
+  'id': 37891,
+  'title': '我是一个兵',
+  'abstract': '',
+  'content': '',
+  'editor': '陈洁',
+  'medias': [
+    {'media': '19453/thumb.png', 'title': '新兵入伍之前，部队里带新兵首先要训练好“教官”，为此想当一名带新兵的“教官”要经历考验和磨练。'},
+    {'media': '19454/thumb.png', 'title': '超负荷的训练量加高温天气下的暴晒，战士一个个都晒黑了脸。'},
+    {'media': '19455/thumb.png', 'title': '每年的11月24日是老兵离开部队的时候，宣布退伍命令的那一刻，老兵不禁流下热泪。'},
+    {'media': '19456/thumb.png', 'title': '武警官兵现场肩扛手扒救群众。'},
+    {'media': '19457/thumb.png', 'title': '武警官兵在参与抗冰保电时手上多处冻伤。'},
+    {'media': '19458/thumb.png', 'title': '武警特战队员针对各类地形区域要展开不同情况下处置突发任务。'},
+    {'media': '19459/thumb.png', 'title': '为了提升能力素质，他们每天都在训练中提升保家卫国的能力。'},
+    {'media': '19460/thumb.png', 'title': '训犬员和“无言的战友”是战场上的好搭档，生活上的好朋友。'},
+    {'media': '19461/thumb.png', 'title': '武警官兵默默的在烟花下为百姓安全执勤站岗'}
+  ],
+  'page_view': 313,
+  'pdate': '2014-03-22 11:21:27',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37842 = {
+  'id': 37842,
+  'title': '限行，只是一块“创可贴”',
+  'abstract': '',
+  'content': '',
+  'editor': '杨俏颖',
+  'medias': [
+    {'media': '19425/thumb.jpg', 'title': ''},
+    {'media': '19426/thumb.jpg', 'title': ''},
+    {'media': '19427/thumb.jpg', 'title': ''},
+    {'media': '19428/thumb.jpg', 'title': ''},
+    {'media': '19429/thumb.jpg', 'title': ''},
+    {'media': '19430/thumb.jpg', 'title': ''},
+    {'media': '19431/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 347,
+  'pdate': '2014-03-21 11:07:02',
+  'source': '腾讯新闻',
+  'ntype': 2
+}
+
+photosInAlbum37797 = {
+  'id': 37797,
+  'title': '拥有幸福的九个标志',
+  'abstract': '',
+  'content': '',
+  'editor': '陈洁',
+  'medias': [
+    {'media': '19389/thumb.jpg', 'title': ''},
+    {'media': '19390/thumb.jpg', 'title': ''},
+    {'media': '19391/thumb.jpg', 'title': ''},
+    {'media': '19392/thumb.jpg', 'title': ''},
+    {'media': '19393/thumb.jpg', 'title': ''},
+    {'media': '19394/thumb.jpg', 'title': ''},
+    {'media': '19395/thumb.jpg', 'title': ''},
+    {'media': '19396/thumb.jpg', 'title': ''},
+    {'media': '19397/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 301,
+  'pdate': '2014-03-20 11:12:30',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37738 = {
+  'id': 37738,
+  'title': '【杭州街拍】清纯、御姐、中性、辣妈',
+  'abstract': '',
+  'content': '',
+  'editor': '陈洁',
+  'medias': [
+    {'media': '19354/thumb.jpg', 'title': '好清纯'},
+    {'media': '19355/thumb.jpg', 'title': ''},
+    {'media': '19356/thumb.jpg', 'title': ''},
+    {'media': '19357/thumb.jpg', 'title': ''},
+    {'media': '19358/thumb.jpg', 'title': '这位是辣妈，你们看出来了吗？'},
+    {'media': '19359/thumb.jpg', 'title': ''},
+    {'media': '19360/thumb.jpg', 'title': ''},
+    {'media': '19361/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 588,
+  'pdate': '2014-03-19 13:13:20',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37735 = {
+  'id': 37735,
+  'title': '\"范思哲\"男装现\"开裆裤\"走台',
+  'abstract': '',
+  'content': '',
+  'editor': '陈洁',
+  'medias': [
+    {'media': '19346/thumb.jpg', 'title': ''},
+    {'media': '19347/thumb.jpg', 'title': ''},
+    {'media': '19348/thumb.jpg', 'title': ''},
+    {'media': '19349/thumb.jpg', 'title': ''},
+    {'media': '19350/thumb.jpg', 'title': ''},
+    {'media': '19351/thumb.jpg', 'title': ''},
+    {'media': '19352/thumb.jpg', 'title': ''},
+    {'media': '19353/thumb.jpg', 'title': ''}
+  ],
+  'page_view': 380,
+  'pdate': '2014-03-19 11:20:29',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37668 = {
+  'id': 37668,
+  'title': '\"范思哲\"男装现\"开裆裤\"走台',
+  'abstract': '',
+  'content': '',
+  'editor': '金烨',
+  'medias': [
+    {'media': '19305/thumb.jpg', 'title': '台湾14岁美少女大提琴演奏家欧阳娜娜亮相《天天向上》走红。'},
+    {'media': '19306/thumb.jpg', 'title': '她还有一个漂亮姐姐妮妮和妹妹娣娣，妈妈是台湾演员傅娟，爸爸则是台北市议员欧阳龙。  '},
+    {'media': '19307/thumb.jpg', 'title': ''},
+    {'media': '19308/thumb.jpg', 'title': ''},
+    {'media': '19309/thumb.jpg', 'title': ''},
+    {'media': '19310/thumb.jpg', 'title': ''},
+    {'media': '19311/thumb.jpg', 'title': ''},
+    {'media': '19312/thumb.jpg', 'title': ''},
+    {'media': '19313/thumb.jpg', 'title': ''},
+    {'media': '19314/thumb.jpg', 'title': ''},
+    {'media': '19315/thumb.jpg', 'title': ''},
+    {'media': '19316/thumb.jpg', 'title': ''},
+    {'media': '19317/thumb.jpg', 'title': '欧阳娜娜与父亲'},
+    {'media': '19318/thumb.jpg', 'title': '欧阳娜娜母亲'},
+    {'media': '19319/thumb.jpg', 'title': '欧阳娜娜一家'},
+    {'media': '19320/thumb.jpg', 'title': '欧阳娜娜一家'},
+    {'media': '19321/thumb.jpg', 'title': '欧阳娜娜三姐妹'}
+  ],
+  'page_view': 380,
+  'pdate': '2014-03-18 14:17:20',
+  'source': '网易',
+  'ntype': 2
+}
+
+photosInAlbum37654 = {
+  'id': 37654,
+  'title': '【杭州街拍】潮人们出街了',
+  'abstract': '',
+  'content': '',
+  'editor': '金烨',
+  'medias': [
+    {'media': '19292/thumb.jpg', 'title': '爱上这个季节，花裙子的春天真心美'},
+    {'media': '19293/thumb.jpg', 'title': '帅气的中性风，高跟鞋很女人也很美丽！'},
+    {'media': '19294/thumb.jpg', 'title': '颜色配的真心舒服！'},
+    {'media': '19295/thumb.jpg', 'title': '还真有点那个baby的感觉，美！'},
+    {'media': '19296/thumb.jpg', 'title': '露脐短装配风衣，风衣颜色真心赞！'},
+    {'media': '19297/thumb.jpg', 'title': '这样的情侣装好炫酷！'},
+    {'media': '19298/thumb.jpg', 'title': '白色加上蓝色的美'}
+  ],
+  'page_view': 391,
+  'pdate': '2014-03-18 09:54:18',
+  'source': '新浪新闻',
+  'ntype': 2
+}
+
+photosInAlbum37599 = {
+  'id': 37599,
+  'title': '牛奶变外衣，够不够激情性感？',
+  'abstract': '',
+  'content': '',
+  'editor': '杨怡薇',
+  'medias': [
+    {'media': '19261/thumb.jpg', 'title': '去年，一组“牛奶外衣”的日历让不少人大为惊叹！'},
+    {'media': '19262/thumb.jpg', 'title': '当流动的液体撞击到模特柔软的身体上，总会迸发出别样的性感与激情。'},
+    {'media': '19263/thumb.jpg', 'title': '今天，小编再为大家奉上一组同主题大片。'},
+    {'media': '19264/thumb.jpg', 'title': '这次摄影师 Jaroslav Wieczorkiewicz用牛奶和水为模特们量身订做一套套晚礼服。'},
+    {'media': '19265/thumb.jpg', 'title': '裙摆飘逸，充满丝滑的质感。'},
+    {'media': '19266/thumb.jpg', 'title': '你是否也想弄一件液体的衣服呢？'},
+    {'media': '19267/thumb.jpg', 'title': '模特“液体外衣”大片'},
+    {'media': '19268/thumb.jpg', 'title': '模特“液体外衣”大片'},
+    {'media': '19269/thumb.jpg', 'title': '模特“液体外衣”大片'},
+    {'media': '19270/thumb.jpg', 'title': '模特“液体外衣”大片'},
+    {'media': '19271/thumb.jpg', 'title': '模特“液体外衣”大片'}
+  ],
+  'page_view': 305,
+  'pdate': '2014-03-17 14:54:39',
+  'source': '大浙网',
+  'ntype': 2
+}
+
+photosInAlbum37590 = {
+  'id': 37590,
+  'title': '英餐厅推出超辣汉堡致5人住院',
+  'abstract': '',
+  'content': '',
+  'editor': '金烨',
+  'medias': [
+    {'media': '19249/thumb.jpg', 'title': '到目前为止，3000名挑战者中只有59人成功地吃完整个汉堡。'},
+    {'media': '19250/thumb.jpg', 'title': '售价3.9英镑(约合人民币39元)的汉堡最大的特点在于添加的皮尔皮尔辣椒酱。'},
+    {'media': '19251/thumb.jpg', 'title': ''},
+    {'media': '19252/thumb.jpg', 'title': '目前，该餐厅老板尼克·甘巴德拉为避免被起诉，要求顾客在点食这款汉堡前签订法律免责声明。'},
+    {'media': '19253/thumb.jpg', 'title': '一位有点自大的顾客在吃汉堡前就患有胃溃疡，因而在吃完后因肠穿孔被送往医院。所幸，这名顾客已经渡过了危险期。'},
+    {'media': '19254/thumb.jpg', 'title': ''},
+    {'media': '19255/thumb.jpg', 'title': '据55岁的尼克透露，顾客在吃这款汉堡时的言行举止大为不雅。有的大脱衣服，有的则跪地求饶，还有的甚至用手锤玻璃或是呕吐不止。'}
+  ],
+  'page_view': 229,
+  'pdate': '2014-03-17 11:06:11',
+  'source': '腾讯新闻',
+  'ntype': 2
+}
+
 # run server
 if __name__ == '__main__':
     #app.run(debug = True)
 	app.run(
-	    host = 'mbpr2013.local', # in order to be accessed from cell phone
-      # host = '192.168.1.101',
+	    # host = 'mbpr2013.local', # in order to be accessed from cell phone
+      host = '10.10.6.27',
 	    debug = True
 	)
